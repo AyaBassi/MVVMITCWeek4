@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NetwokableProtocol{
-    func callAPIToGetData(with urlString:String,completion:@escaping(Result<[Fruit],Error>) -> Void)
+    func callAPIToGetData<T:Decodable>(with urlString:String,completion:@escaping(Result<T,Error>) -> Void)
 }

@@ -8,11 +8,10 @@
 import Foundation
 
 class NetworkManager : NetwokableProtocol{
-
+    
     static var fruits : [Fruit]?
     
-    func callAPIToGetData(with urlString:String,completion:@escaping(Result<[Fruit],Error>) -> Void){
-        
+    func callAPIToGetData<T>(with urlString: String, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
         guard let url = URL(string: urlString) else {print("DEBUG: Failed to get URL");return}
         let session = URLSession.shared
         let task = session.dataTask(with: url) { data, response , error  in
@@ -28,8 +27,8 @@ class NetworkManager : NetwokableProtocol{
             guard let data = data else {print("DEBUG: Couldn't get data from api");return}
             
             do {
-                let dataList = try JSONDecoder().decode([Fruit].self, from: data)
-                NetworkManager.fruits = dataList
+                let dataList = try JSONDecoder().decode(T.self, from: data)
+                //NetworkManager.fruits = Fruit(dataList)
                 completion(.success(dataList))
                 
             }catch{
@@ -39,6 +38,10 @@ class NetworkManager : NetwokableProtocol{
         task.resume()
     }
 }
+
+
+
+
 
 
 

@@ -20,14 +20,25 @@ class TableViewControllerViewModel {
     }
     
     func getFruitsDetailsWithClosure(url:String,completion: @escaping ()->Void){
-        anyManager.callAPIToGetData(with: url) { result in
-            
+        anyManager.callAPIToGetData(with: url) { (result : Result<[Fruit],Error>) in
             switch result {
             case .success(let dataList):
                 self.fruits = dataList
                 completion()
-            case .failure(let error ):print(error.localizedDescription)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
 }
+
+
+//anyManager.callAPIToGetData(with: url) { result in
+//
+//    switch result {
+//    case .success(let dataList):
+//        self.fruits = dataList
+//        completion()
+//    case .failure(let error ):print(error.localizedDescription)
+//    }
+//}
