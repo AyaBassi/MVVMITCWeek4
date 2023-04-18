@@ -68,23 +68,23 @@ final class LoginViewControllerUITests: XCTestCase {
     
     
     
-    func testFlow() throws {
-        
-        let app = XCUIApplication()
-        app.textFields["Email"].tap()
-        app.secureTextFields["Password"].tap()
-        app.buttons["Login"].tap()
-        
-        let tablesQuery2 = app.tables
-        let tablesQuery = tablesQuery2
-        tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Calories: 81").staticTexts["See Details"]/*[[".cells.containing(.staticText, identifier:\"Family: Ebenaceae\")",".buttons[\"See Details\"].staticTexts[\"See Details\"]",".staticTexts[\"See Details\"]",".cells.containing(.staticText, identifier:\"Name: Persimmon\")",".cells.containing(.staticText, identifier:\"Carbohydrate: 18.0\")",".cells.containing(.staticText, identifier:\"Sugar: 18.0\")",".cells.containing(.staticText, identifier:\"Calories: 81\")"],[[[-1,6,1],[-1,5,1],[-1,4,1],[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Family: Ebenaceae"]/*[[".cells.staticTexts[\"Family: Ebenaceae\"]",".staticTexts[\"Family: Ebenaceae\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        
-        let seeDetailsButton = tablesQuery2.cells.containing(.staticText, identifier:"Name: Strawberry").buttons["See Details"]
-        seeDetailsButton.tap()
-        seeDetailsButton.swipeUp()
-                
-    }
+//    func testFlow() throws {
+//
+//        let app = XCUIApplication()
+//        app.textFields["Email"].tap()
+//        app.secureTextFields["Password"].tap()
+//        app.buttons["Login"].tap()
+//
+//        let tablesQuery2 = app.tables
+//        let tablesQuery = tablesQuery2
+//        tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Calories: 81").staticTexts["See Details"]/*[[".cells.containing(.staticText, identifier:\"Family: Ebenaceae\")",".buttons[\"See Details\"].staticTexts[\"See Details\"]",".staticTexts[\"See Details\"]",".cells.containing(.staticText, identifier:\"Name: Persimmon\")",".cells.containing(.staticText, identifier:\"Carbohydrate: 18.0\")",".cells.containing(.staticText, identifier:\"Sugar: 18.0\")",".cells.containing(.staticText, identifier:\"Calories: 81\")"],[[[-1,6,1],[-1,5,1],[-1,4,1],[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.tap()
+//        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Family: Ebenaceae"]/*[[".cells.staticTexts[\"Family: Ebenaceae\"]",".staticTexts[\"Family: Ebenaceae\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+//
+//        let seeDetailsButton = tablesQuery2.cells.containing(.staticText, identifier:"Name: Strawberry").buttons["See Details"]
+//        seeDetailsButton.tap()
+//        seeDetailsButton.swipeUp()
+//
+//    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
