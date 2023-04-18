@@ -18,11 +18,6 @@ class TableViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-//        tableViewControllerViewModel.reloadTableView = {
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
-//        }
         tableViewControllerViewModel.getFruitsDetailsWithClosure(url: "https://fruityvice.com/api/fruit/all") {
             DispatchQueue.main.async {
                 self.tableView.reloadData()

@@ -28,6 +28,11 @@
 		63BFE34629EB45D100EE9B61 /* NetworkableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BFE34529EB45D100EE9B61 /* NetworkableProtocol.swift */; };
 		F35C10FB29ED429400A2C86F /* FruitsFile.json in Resources */ = {isa = PBXBuildFile; fileRef = F35C10FA29ED429400A2C86F /* FruitsFile.json */; };
 		F35C10FD29ED458000A2C86F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C10FC29ED458000A2C86F /* Users.swift */; };
+		F35C110129ED692800A2C86F /* MockingNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C110029ED692800A2C86F /* MockingNetworkManager.swift */; };
+		F35C110329ED6E5600A2C86F /* TableViewViewModelMockingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C110229ED6E5600A2C86F /* TableViewViewModelMockingTests.swift */; };
+		F35C110529ED6F7200A2C86F /* TableViewViewModelStubbingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C110429ED6F7200A2C86F /* TableViewViewModelStubbingTests.swift */; };
+		F35C110729ED77BE00A2C86F /* StubbingNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35C110629ED77BE00A2C86F /* StubbingNetworkManager.swift */; };
+		F39A3C4629EE8E53007FD501 /* LoginViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A3C4529EE8E53007FD501 /* LoginViewControllerUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +78,11 @@
 		63BFE34529EB45D100EE9B61 /* NetworkableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkableProtocol.swift; sourceTree = "<group>"; };
 		F35C10FA29ED429400A2C86F /* FruitsFile.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FruitsFile.json; sourceTree = "<group>"; };
 		F35C10FC29ED458000A2C86F /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		F35C110029ED692800A2C86F /* MockingNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockingNetworkManager.swift; sourceTree = "<group>"; };
+		F35C110229ED6E5600A2C86F /* TableViewViewModelMockingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModelMockingTests.swift; sourceTree = "<group>"; };
+		F35C110429ED6F7200A2C86F /* TableViewViewModelStubbingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModelStubbingTests.swift; sourceTree = "<group>"; };
+		F35C110629ED77BE00A2C86F /* StubbingNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubbingNetworkManager.swift; sourceTree = "<group>"; };
+		F39A3C4529EE8E53007FD501 /* LoginViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +144,6 @@
 				63BFE30329E7EFFB00EE9B61 /* Assets.xcassets */,
 				63BFE30529E7EFFB00EE9B61 /* LaunchScreen.storyboard */,
 				63BFE30829E7EFFB00EE9B61 /* Info.plist */,
-				F35C10FA29ED429400A2C86F /* FruitsFile.json */,
 			);
 			path = MVVMPractice;
 			sourceTree = "<group>";
@@ -142,10 +151,13 @@
 		63BFE31029E7EFFB00EE9B61 /* MVVMPracticeTests */ = {
 			isa = PBXGroup;
 			children = (
-				F35C10FE29ED524200A2C86F /* FakeNetworkManger */,
+				F35C10FA29ED429400A2C86F /* FruitsFile.json */,
+				F35C10FE29ED524200A2C86F /* NetworkMangerForTesting */,
 				63BFE31129E7EFFB00EE9B61 /* MVVMPracticeTests.swift */,
 				63BFE33529E80D8800EE9B61 /* LoginViewModelTests.swift */,
 				63BFE34029E9BBC100EE9B61 /* TableViewControllerViewModelTests.swift */,
+				F35C110229ED6E5600A2C86F /* TableViewViewModelMockingTests.swift */,
+				F35C110429ED6F7200A2C86F /* TableViewViewModelStubbingTests.swift */,
 			);
 			path = MVVMPracticeTests;
 			sourceTree = "<group>";
@@ -155,6 +167,7 @@
 			children = (
 				63BFE31B29E7EFFB00EE9B61 /* MVVMPracticeUITests.swift */,
 				63BFE31D29E7EFFB00EE9B61 /* MVVMPracticeUITestsLaunchTests.swift */,
+				F39A3C4529EE8E53007FD501 /* LoginViewControllerUITests.swift */,
 			);
 			path = MVVMPracticeUITests;
 			sourceTree = "<group>";
@@ -219,12 +232,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		F35C10FE29ED524200A2C86F /* FakeNetworkManger */ = {
+		F35C10FE29ED524200A2C86F /* NetworkMangerForTesting */ = {
 			isa = PBXGroup;
 			children = (
 				63BFE33E29E9BB2300EE9B61 /* FakeNetworkManger.swift */,
+				F35C110029ED692800A2C86F /* MockingNetworkManager.swift */,
+				F35C110629ED77BE00A2C86F /* StubbingNetworkManager.swift */,
 			);
-			path = FakeNetworkManger;
+			path = NetworkMangerForTesting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,9 +393,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				63BFE34129E9BBC100EE9B61 /* TableViewControllerViewModelTests.swift in Sources */,
+				F35C110529ED6F7200A2C86F /* TableViewViewModelStubbingTests.swift in Sources */,
+				F35C110729ED77BE00A2C86F /* StubbingNetworkManager.swift in Sources */,
 				63BFE33629E80D8800EE9B61 /* LoginViewModelTests.swift in Sources */,
+				F35C110129ED692800A2C86F /* MockingNetworkManager.swift in Sources */,
 				63BFE31229E7EFFB00EE9B61 /* MVVMPracticeTests.swift in Sources */,
 				63BFE33F29E9BB2300EE9B61 /* FakeNetworkManger.swift in Sources */,
+				F35C110329ED6E5600A2C86F /* TableViewViewModelMockingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +409,7 @@
 			files = (
 				63BFE31C29E7EFFB00EE9B61 /* MVVMPracticeUITests.swift in Sources */,
 				63BFE31E29E7EFFB00EE9B61 /* MVVMPracticeUITestsLaunchTests.swift in Sources */,
+				F39A3C4629EE8E53007FD501 /* LoginViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

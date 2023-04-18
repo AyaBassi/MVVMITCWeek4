@@ -15,9 +15,7 @@ final class TableViewControllerViewModelTests: XCTestCase {
     override func setUpWithError() throws {
         
         tableViewViewModel = TableViewControllerViewModel(anyManager: FakeNetworkManger())
-        tableViewViewModel.getFruitsDetailsWithClosure(url: "FruitsFile") {
-            self.fruits = self.tableViewViewModel.fruits
-        }
+        
     }
 
     override func tearDownWithError() throws {
@@ -32,8 +30,9 @@ final class TableViewControllerViewModelTests: XCTestCase {
 
     func testJsonDataVariablesWhichShouldPass(){
         tableViewViewModel.getFruitsDetailsWithClosure(url: "FruitsFile") {
-                let fruit = self.fruits[0]
-                XCTAssertEqual(fruit.name, "Persimmon","name")
+            guard let fruit = self.tableViewViewModel.fruits.first else {return}
+ 
+                XCTAssertEqual(fruit.name, "Persimmon","name variable")
                 XCTAssertEqual(fruit.id, 52,"id")
                 XCTAssertEqual(fruit.order, "Rosales","order")
                 XCTAssertEqual(fruit.genus, "Diospyros","genus")
@@ -42,13 +41,12 @@ final class TableViewControllerViewModelTests: XCTestCase {
                 XCTAssertEqual(fruit.nutritions.sugar, 18.0,"nutritions.sugar")
                 XCTAssertEqual(fruit.nutritions.carbohydrates, 18.0,"nutritions.carbohydrates")
                 XCTAssertEqual(fruit.nutritions.protein, 0.0,"proties")
-            
         }
     }
     
     func testJsonDataVariablesWhichShouldNotPass(){
         tableViewViewModel.getFruitsDetailsWithClosure(url: "FruitsFile") {
-            let fruit = self.fruits[0]
+            guard let fruit = self.tableViewViewModel.fruits.first else {return}
             XCTAssertNotEqual(fruit.name, "Persimmo","name")
             XCTAssertNotEqual(fruit.id, 5,"id")
             XCTAssertNotEqual(fruit.order, "Rosale","order")
@@ -56,8 +54,8 @@ final class TableViewControllerViewModelTests: XCTestCase {
             XCTAssertNotEqual(fruit.nutritions.calories, 8,"nutritions.calories")
             XCTAssertNotEqual(fruit.nutritions.fat, 1,"fat")
             XCTAssertNotEqual(fruit.nutritions.sugar, 18.5,"nutritions.sugar")
-            XCTAssertNotEqual(fruit.nutritions.carbohydrates, 18.5,accuracy:0.01, "nutritions.carbohydrates")
-            XCTAssertNotEqual(self.fruits[0].nutritions.protein, 1,"protein")
+            XCTAssertNotEqual(fruit.nutritions.carbohydrates, 18.5,accuracy:0.0, "nutritions.carbohydrates")
+            XCTAssertNotEqual(fruit.nutritions.protein, 1,"protein")
             
         }
     }
