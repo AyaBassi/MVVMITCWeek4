@@ -8,6 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    // MARK: - Properties
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var emailLabel: UITextField!
@@ -15,9 +16,41 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UITextField!
     let loginViewModel = LoginViewModel()
     
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("1 viewDidLoad LoginViewController")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //super.viewWillAppear(true)
+        print("2 ViewWillAppear LoginViewController")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        //super.viewWillLayoutSubviews()
+        print("3 viewWillLayoutSubviews LoginViewController")
+    }
+    override func viewDidLayoutSubviews() {
+        //super.viewDidLayoutSubviews()
+        print("4 viewDidLayoutSubviews LoginViewController")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //super.viewDidAppear(true)
+        print("5 viewDidAppear LoginViewController")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        print("6 viewWillDisappear LoginViewController")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        print("7 viewDidDisappear LoginViewController")
     }
     
 

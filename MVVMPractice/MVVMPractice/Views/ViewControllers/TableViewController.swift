@@ -9,12 +9,17 @@ import UIKit
 
 //let url = "https://fruityvice.com/api/fruit/all"
 class TableViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+
+    // MARK: - Properties
     
+    @IBOutlet weak var tableView: UITableView!
     let tableViewControllerViewModel = TableViewControllerViewModel(anyManager: NetworkManager())
+    
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("1 viewDidLoad TableViewController")
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -23,6 +28,35 @@ class TableViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print("2 ViewWillAppear TableViewController")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print("3 viewWillLayoutSubviews TableViewController")
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print("4 viewDidLayoutSubviews TableViewController")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        print("5 viewDidAppear TableViewController")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        print("6 viewWillDisappear TableViewController")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        print("7 viewDidDisappear TableViewController")
     }
 
 }
@@ -63,3 +97,4 @@ extension TableViewController : TableViewCellDelegate{
         print(tag)
     }
 }
+
