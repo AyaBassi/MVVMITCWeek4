@@ -14,7 +14,7 @@ class TableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let tableViewControllerViewModel = TableViewControllerViewModel(anyManager: NetworkManager())
-    
+    //var mainCoordinator:MainCoordinator?
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -87,14 +87,14 @@ extension TableViewController : UITableViewDataSource {
 extension TableViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath.row)
+        MainCoordinator.shared.goToDetailsViewController()
     }
 }
 
 
 extension TableViewController : TableViewCellDelegate{
     func handleButtonClickedInTableViewCell(tag: Int) {
-        print(tag)
+        MainCoordinator.shared.goToDetailsViewController()
     }
 }
 

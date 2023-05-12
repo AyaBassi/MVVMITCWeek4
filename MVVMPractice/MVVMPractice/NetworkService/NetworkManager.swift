@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkManager : NetwokableProtocol{
+class NetworkManager : NetwokableProtocol {
     
     static var fruits : [Fruit]?
     

@@ -7,11 +7,7 @@
 
 import Foundation
 
-
-
 class LoginViewModel {
-   
-    
     func isValidLoggingIn(email:String?,password:String?)->Bool{
         var isValid = false
         
@@ -30,5 +26,4 @@ class LoginViewModel {
         
         return isValid
     }
-    
 }
