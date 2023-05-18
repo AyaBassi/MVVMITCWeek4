@@ -13,7 +13,7 @@ class TableViewController: UIViewController {
     // MARK: - Properties
     
     @IBOutlet weak var tableView: UITableView!
-    let tableViewControllerViewModel = TableViewControllerViewModel(anyManager: NetworkManager())
+    let tableViewControllerViewModel = TableViewControllerViewModel(anyManager: NetworkManagerWithCertificatePinning())
     //var mainCoordinator:MainCoordinator?
     // MARK: Lifecycle
     
@@ -87,14 +87,16 @@ extension TableViewController : UITableViewDataSource {
 extension TableViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        MainCoordinator.shared.goToDetailsViewController()
+        TableViewCoordinator.shared.goToDetailsViewController()
     }
 }
 
 
 extension TableViewController : TableViewCellDelegate{
     func handleButtonClickedInTableViewCell(tag: Int) {
-        MainCoordinator.shared.goToDetailsViewController()
+        TableViewCoordinator.shared.goToDetailsViewController()
+        
+        print(MainCoordinator.shared.childCoordinators)
     }
 }
 

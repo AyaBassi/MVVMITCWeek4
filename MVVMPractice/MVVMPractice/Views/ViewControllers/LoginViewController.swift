@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
         let password = passwordLabel.text
         if loginViewModel.isValidLoggingIn(email: email, password: password) {
             // move to tableView
-            MainCoordinator.shared.goToTableView()
+            LoginViewCoordinator.shared.goToTableView()
         }else {
             print("Invalid Login")
         }

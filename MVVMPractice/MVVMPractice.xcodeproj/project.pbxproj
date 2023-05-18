@@ -35,7 +35,12 @@
 		F3990B6B2A0E4A100049DFEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990B6A2A0E4A100049DFEF /* Main.storyboard */; };
 		F3990B6E2A0E56920049DFEF /* CoordinatableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990B6D2A0E56920049DFEF /* CoordinatableProtocol.swift */; };
 		F3990B702A0E57650049DFEF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990B6F2A0E57650049DFEF /* MainCoordinator.swift */; };
+		F3990B722A0FA7820049DFEF /* TableViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990B712A0FA7820049DFEF /* TableViewCoordinator.swift */; };
+		F3990B742A0FB11A0049DFEF /* DetailsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990B732A0FB11A0049DFEF /* DetailsViewCoordinator.swift */; };
+		F3990B762A0FB1E80049DFEF /* LoginViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990B752A0FB1E80049DFEF /* LoginViewCoordinator.swift */; };
 		F39A3C4629EE8E53007FD501 /* LoginViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A3C4529EE8E53007FD501 /* LoginViewControllerUITests.swift */; };
+		F3D6C6A72A163493006137F7 /* analytics.fruityvice.com.cer in Resources */ = {isa = PBXBuildFile; fileRef = F3D6C6A62A163493006137F7 /* analytics.fruityvice.com.cer */; };
+		F3D6C6A92A163504006137F7 /* NetworkManagerWithCertificatePinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D6C6A82A163504006137F7 /* NetworkManagerWithCertificatePinning.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +93,12 @@
 		F3990B6A2A0E4A100049DFEF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F3990B6D2A0E56920049DFEF /* CoordinatableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatableProtocol.swift; sourceTree = "<group>"; };
 		F3990B6F2A0E57650049DFEF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		F3990B712A0FA7820049DFEF /* TableViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCoordinator.swift; sourceTree = "<group>"; };
+		F3990B732A0FB11A0049DFEF /* DetailsViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewCoordinator.swift; sourceTree = "<group>"; };
+		F3990B752A0FB1E80049DFEF /* LoginViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewCoordinator.swift; sourceTree = "<group>"; };
 		F39A3C4529EE8E53007FD501 /* LoginViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerUITests.swift; sourceTree = "<group>"; };
+		F3D6C6A62A163493006137F7 /* analytics.fruityvice.com.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = analytics.fruityvice.com.cer; sourceTree = "<group>"; };
+		F3D6C6A82A163504006137F7 /* NetworkManagerWithCertificatePinning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerWithCertificatePinning.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +149,7 @@
 		63BFE2F929E7EFF900EE9B61 /* MVVMPractice */ = {
 			isa = PBXGroup;
 			children = (
+				F3D6C6A62A163493006137F7 /* analytics.fruityvice.com.cer */,
 				63BFE34429EB459700EE9B61 /* Protocols */,
 				63BFE32A29E7F69600EE9B61 /* NetworkService */,
 				63BFE32F29E8002200EE9B61 /* Model */,
@@ -183,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				63BFE32D29E7FFE000EE9B61 /* NetworkManager.swift */,
+				F3D6C6A82A163504006137F7 /* NetworkManagerWithCertificatePinning.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -255,6 +267,9 @@
 			children = (
 				F3990B6D2A0E56920049DFEF /* CoordinatableProtocol.swift */,
 				F3990B6F2A0E57650049DFEF /* MainCoordinator.swift */,
+				F3990B752A0FB1E80049DFEF /* LoginViewCoordinator.swift */,
+				F3990B712A0FA7820049DFEF /* TableViewCoordinator.swift */,
+				F3990B732A0FB11A0049DFEF /* DetailsViewCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -367,6 +382,7 @@
 				63BFE30429E7EFFB00EE9B61 /* Assets.xcassets in Resources */,
 				F35C10FB29ED429400A2C86F /* FruitsFile.json in Resources */,
 				F3990B6B2A0E4A100049DFEF /* Main.storyboard in Resources */,
+				F3D6C6A72A163493006137F7 /* analytics.fruityvice.com.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,11 +413,15 @@
 				63BFE2FF29E7EFF900EE9B61 /* LoginViewController.swift in Sources */,
 				63BFE33B29E81CD300EE9B61 /* TableViewCell.swift in Sources */,
 				F3990B692A0E42ED0049DFEF /* DetailsViewContoller.swift in Sources */,
+				F3990B722A0FA7820049DFEF /* TableViewCoordinator.swift in Sources */,
 				F35C10FD29ED458000A2C86F /* Users.swift in Sources */,
 				63BFE2FB29E7EFF900EE9B61 /* AppDelegate.swift in Sources */,
 				63BFE32E29E7FFE000EE9B61 /* NetworkManager.swift in Sources */,
+				F3990B762A0FB1E80049DFEF /* LoginViewCoordinator.swift in Sources */,
 				63BFE34629EB45D100EE9B61 /* NetworkableProtocol.swift in Sources */,
+				F3D6C6A92A163504006137F7 /* NetworkManagerWithCertificatePinning.swift in Sources */,
 				63BFE2FD29E7EFF900EE9B61 /* SceneDelegate.swift in Sources */,
+				F3990B742A0FB11A0049DFEF /* DetailsViewCoordinator.swift in Sources */,
 				F3990B6E2A0E56920049DFEF /* CoordinatableProtocol.swift in Sources */,
 				63BFE32C29E7F9FC00EE9B61 /* TableViewController.swift in Sources */,
 				63BFE33429E80BBC00EE9B61 /* LoginViewModel.swift in Sources */,

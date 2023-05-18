@@ -8,9 +8,13 @@
 import UIKit
 
 protocol CoordinatableProtocol {
-    var childCoordinators: [CoordinatableProtocol] {get}
-    //var childCoordinators: [CoordinatableProtocol] {get set}
-
+    var childCoordinators: [ChildCoordinatableProtocol] {get}
     var navigationController : UINavigationController { get set}
     func startCoordinator()
 }
+
+protocol ChildCoordinatableProtocol {
+    var navigationController : UINavigationController?{get set}
+}
+
+
